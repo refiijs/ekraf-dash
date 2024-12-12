@@ -7,12 +7,13 @@ import logo from "../../Assets/img/logo-disparbud.png";
 
 function NavbarTop() {
   return (
-    <>
-      <Navbar bg="custom" data-bs-theme="light" sticky="top">
-        <Container>
-          <Navbar.Brand href="#home">
-            <img src={logo} alt="Logo Disparbud" />
-          </Navbar.Brand>
+    <Navbar bg="custom" expand="lg" data-bs-theme="light" sticky="top">
+      <Container>
+        <Navbar.Brand href="#home">
+          <img src={logo} alt="Logo Disparbud" />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link as={Link} to="/">
               Beranda
@@ -27,9 +28,9 @@ function NavbarTop() {
               Tentang Kami
             </Nav.Link>
           </Nav>
-        </Container>
-      </Navbar>
-    </>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 

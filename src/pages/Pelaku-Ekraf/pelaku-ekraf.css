@@ -39,3 +39,41 @@
   margin: 0 auto; /* Center teks dengan batas maksimal lebar */
   line-height: 1.6;
 }
+@media (max-width: 768px) {
+  .hero-image {
+    padding: 0px 20px; /* Mengurangi padding pada hero-image */
+  }
+
+  .hero-image img {
+    object-fit: cover; /* Agar gambar tetap memenuhi lebar dan tinggi tanpa distorsi */
+  }
+
+  .ekraf-section h2 {
+    font-size: 2rem; /* Ukuran font lebih kecil untuk layar kecil */
+  }
+
+  .ekraf-section p {
+    font-size: 0.8rem; /* Ukuran font lebih kecil untuk layar kecil */
+  }
+}
+
+/* Responsif untuk layar dengan lebar maksimum 576px (smartphone kecil) */
+@media (max-width: 576px) {
+  .hero-image {
+    padding: 0px 10px; /* Mengurangi padding lebih lanjut pada gambar */
+  }
+
+  .hero-image img {
+    object-fit: cover; /* Gambar tetap terjaga proporsinya */
+  }
+
+  .ekraf-section h2 {
+    font-size: 1.5rem; /* Ukuran font lebih kecil untuk layar lebih kecil */
+  }
+
+  .ekraf-section p {
+    font-size: 0.6rem; /* Ukuran font lebih kecil untuk layar lebih kecil */
+    padding-left: 10px; /* Memberikan padding kiri untuk keterbacaan */
+    padding-right: 10px; /* Memberikan padding kanan untuk keterbacaan */
+  }
+}

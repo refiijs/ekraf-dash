@@ -4,20 +4,34 @@
 }
 
 h2 {
-  font-size: 32px; /* Ukuran font untuk nama produk */
+  font-size: 42px; /* Ukuran font untuk nama produk */
   font-weight: bold;
   color: #333;
 }
-
+h4 {
+  padding-bottom: 20px;
+  font-weight: bold;
+  font-size: 26px;
+}
 h5 {
-  font-size: 20px; /* Ukuran font untuk range harga */
+  font-size: 28px; /* Ukuran font untuk range harga */
   color: #555;
+  padding: 10px 0;
+  font-weight: bold;
 }
 
-p {
-  font-size: 16px; /* Ukuran font untuk deskripsi */
-  color: #444;
-  line-height: 1.6; /* Jarak antar baris */
+h6 {
+  font-size: 18px;
+  padding: 10px 0;
+}
+
+.product-description {
+  margin-top: 20px; /* Setel margin top yang sesuai */
+  font-size: 16px; /* Menentukan ukuran font */
+  line-height: 1.5;
+  color: #333;
+  font-weight: 400;
+  text-align: left;
 }
 
 .image-card {
@@ -26,10 +40,11 @@ p {
 }
 
 .image-card img {
-  border-radius: 15px; /* Sudut melingkar pada gambar */
+  border-radius: 20px; /* Sudut melingkar pada gambar */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 100%; /* Lebar gambar */
-  height: auto; /* Tinggi otomatis */
+  height: 350px; /* Tinggi otomatis */
+  object-fit: cover;
 }
 
 /* Tambahan jarak antara gambar dan teks */
@@ -44,6 +59,60 @@ p {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Kontainer utama untuk kontak */
+.contact-produk {
+  text-align: left; /* Rata kiri */
+  margin-bottom: 20px; /* Tambahkan jarak bawah */
+}
+
+/* Gaya dasar untuk semua tautan */
+.contact-produk a {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500; /* Sedikit tebal untuk keterbacaan */
+  color: #154272; /* Warna biru default */
+  text-decoration: none; /* Hilangkan garis bawah */
+  transition: color 0.3s ease; /* Animasi transisi */
+  padding-left: 20px;
+}
+
+/* Hover efek pada tautan */
+.contact-produk a:hover {
+  color: #0056b3; /* Warna biru lebih gelap saat hover */
+}
+
+/* Gaya untuk ikon di dalam tautan */
+.contact-produk a svg {
+  color: #333; /* Warna ikon */
+  font-size: 1.2em; /* Ukuran ikon */
+}
+
+/* Hover efek untuk ikon */
+.contact-produk a:hover svg {
+  color: #0056b3; /* Warna ikon berubah saat hover */
+}
+
+/* Gaya untuk setiap paragraf dalam kontak */
+.contact-produk p {
+  margin: 5px 0; /* Jarak vertikal antar elemen */
+  display: flex; /* Agar ikon dan teks sejajar secara horizontal */
+  align-items: center;
+}
+
+/* Gaya untuk judul */
+.contact-produk h6 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 10px; /* Tambahkan jarak bawah */
+  color: #000; /* Warna teks hitam */
+}
+
+/* Hover efek pada tautan */
+.product-link:hover {
+  color: #0056b3; /* Warna biru lebih gelap */
+  text-decoration: none; /* Tampilkan garis bawah saat hover */
+}
+
 .map-frame {
   border: none; /* Menghilangkan border pada iframe */
   border-radius: 10px; /* Sudut melingkar pada peta */
@@ -53,18 +122,146 @@ p {
 .padding-footer {
   padding: 40px 0; /* Padding atas dan bawah sebelum footer */
 }
+/* Responsive layout untuk layar kecil (maksimal 576px) */
+@media (max-width: 576px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 
-/* Responsive layout untuk layar kecil */
-@media (max-width: 768px) {
   h2 {
-    font-size: 28px; /* Ukuran font lebih kecil untuk layar kecil */
+    font-size: 24px; /* Ukuran font untuk nama produk lebih kecil */
   }
 
   h5 {
-    font-size: 18px; /* Ukuran font lebih kecil untuk layar kecil */
+    font-size: 16px; /* Ukuran font untuk range harga lebih kecil */
   }
 
-  p {
-    font-size: 14px; /* Ukuran font lebih kecil untuk layar kecil */
+  h4 {
+    font-size: 20px; /* Ukuran font untuk judul alamat usaha lebih kecil */
+  }
+
+  .product-description {
+    font-size: 14px; /* Ukuran font untuk deskripsi lebih kecil */
+    line-height: 1.2;
+  }
+
+  .image-card img {
+    height: 300px; /* Sesuaikan tinggi gambar */
+    width: 100%;
+    margin-left: 25px;
+  }
+
+  .col-md-6:first-child {
+    margin-bottom: 20px; /* Menambahkan jarak antara gambar dan teks */
+  }
+
+  .contact-produk h6 {
+    font-size: 14px; /* Ukuran font untuk kontak lebih kecil */
+  }
+
+  .contact-produk a {
+    font-size: 14px; /* Ukuran font untuk tautan kontak lebih kecil */
+  }
+
+  .contact-produk a svg {
+    font-size: 1em; /* Ukuran ikon kontak lebih kecil */
+  }
+
+  .map-frame {
+    height: 300px; /* Sesuaikan tinggi iframe peta */
+  }
+
+  .padding-footer {
+    padding: 20px 0; /* Mengurangi padding footer */
+  }
+}
+
+/* Responsive layout untuk layar lebih besar (max-width: 768px, untuk tablet) */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  h2 {
+    font-size: 30px; /* Ukuran font untuk nama produk lebih kecil untuk tablet */
+  }
+
+  h5 {
+    font-size: 18px; /* Ukuran font untuk range harga sedikit lebih kecil */
+  }
+
+  h4 {
+    font-size: 22px; /* Ukuran font untuk alamat usaha sedikit lebih kecil */
+  }
+
+  .product-description {
+    font-size: 15px; /* Ukuran font untuk deskripsi sedikit lebih kecil */
+    line-height: 1.5;
+  }
+
+  .image-card img {
+    height: 300px; /* Sesuaikan tinggi gambar untuk tablet */
+  }
+
+  .col-md-6:first-child {
+    margin-bottom: 20px; /* Jarak antara gambar dan teks */
+  }
+
+  .contact-produk h6 {
+    font-size: 16px; /* Ukuran font untuk kontak sedikit lebih besar */
+  }
+
+  .contact-produk a {
+    font-size: 16px; /* Ukuran font untuk tautan kontak sedikit lebih besar */
+  }
+
+  .contact-produk a svg {
+    font-size: 1.1em; /* Ukuran ikon kontak sedikit lebih besar */
+  }
+
+  .map-frame {
+    height: 350px; /* Sesuaikan tinggi iframe peta untuk tablet */
+  }
+
+  .padding-footer {
+    padding: 30px 0; /* Padding sedikit lebih besar untuk tablet */
+  }
+}
+
+/* Responsive layout untuk layar besar (>768px) */
+@media (min-width: 768px) {
+  .container {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  h2 {
+    font-size: 42px; /* Ukuran font untuk nama produk lebih besar */
+  }
+
+  h5 {
+    font-size: 28px; /* Ukuran font untuk range harga lebih besar */
+  }
+
+  .product-description {
+    font-size: 16px; /* Ukuran font untuk deskripsi tetap */
+  }
+
+  .image-card img {
+    height: 350px; /* Tinggi gambar standar */
+  }
+
+  .col-md-6:first-child {
+    margin-bottom: 30px; /* Jarak antara gambar dan teks lebih besar */
+  }
+
+  .map-frame {
+    height: 400px; /* Ukuran iframe peta untuk layar besar */
+  }
+
+  .padding-footer {
+    padding: 40px 0; /* Padding standar untuk footer */
   }
 }

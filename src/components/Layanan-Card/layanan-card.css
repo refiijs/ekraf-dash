@@ -1,0 +1,77 @@
+Container Styling .container {
+  padding: 0;
+}
+
+/* Card Styling */
+.card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card Image */
+
+.card-img-top {
+  width: 100%; /* Membuat gambar mengisi lebar kontainer */
+  height: 320px; /* Menentukan tinggi gambar */
+  object-fit: cover; /* Memastikan gambar menyesuaikan ukuran kontainer tanpa merubah rasio aspek */
+  object-position: center; /* Memastikan gambar terpusat jika terpotong */
+  border-radius: 12px; /* Menambahkan sudut membulat jika diinginkan */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Transisi halus untuk efek hover */
+}
+
+/* Card Title */
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 0;
+}
+
+/* Card Text */
+.service-card-text p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Icon Styling */
+.service-card-text p .text-primary,
+.service-card-text p .text-success {
+  color: #263642 !important;
+}
+
+.service-card-text p .text-warning {
+  color: #d63a18 !important;
+}
+
+/* Role Text */
+.service-card-text em {
+  font-size: 0.85rem;
+  color: #6c757d;
+  padding: 0 20px;
+}
+
+/* Button */
+.btn-primary {
+  padding: 10px;
+  background-color: #005689;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #fff !important;
+  border: 1px solid #005689 !important;
+  color: #005689 !important;
+}
+
+/* Placeholder for Loading State */
+.text-center.mt-5 {
+  font-size: 1.2rem;
+  color: #666666;
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Card, Carousel } from "react-bootstrap";
 import { groupedSubsektors } from "./sub-sektor";
+import RegulasiPage from "../../components/Regulasi/regulasi";
 import "./tentang-kami.css";
 import img1 from "../../Assets/img/about-ekraf.png";
 import img2 from "../../Assets/img/bima-arya.png";
@@ -51,8 +52,8 @@ const TentangKami = () => {
                     className="tokoh-image" // Menggunakan kelas CSS untuk styling
                   />
                   <Card.Title>Bima Arya</Card.Title>
-                  <p className="tokoh-position">Wali Kota Bogor</p>
-                  <Card.Text>
+                  <p className="tokoh-position">Wali Kota Bogor 2014-2024</p>
+                  <Card.Text className="card-ekraf-text">
                     Kolaborasi adalah kunci keberhasilan ekonomi kreatif dalam
                     mendorong inovasi dan memperkuat pertumbuhan ekonomi kota.
                   </Card.Text>
@@ -67,9 +68,9 @@ const TentangKami = () => {
                   />
                   <Card.Title>Sandiaga Uno</Card.Title>
                   <p className="tokoh-position">
-                    Menteri Pariwisata dan Ekonomi Kreatif Indonesia
+                    Menteri Pariwisata dan Ekonomi Kreatif Indonesia 2020-2024
                   </p>
-                  <Card.Text>
+                  <Card.Text className="card-ekraf-text">
                     Ekonomi kreatif adalah kunci kebangkitan ekonomi nasional.
                     Kita harus mendorong kolaborasi, inovasi, dan digitalisasi
                     di setiap sektor.
@@ -89,7 +90,7 @@ const TentangKami = () => {
                   />
                   <Card.Title>Yoris Sebastian</Card.Title>
                   <p className="tokoh-position">Creativepreneur</p>
-                  <Card.Text>
+                  <Card.Text className="card-ekraf-text">
                     Saat ini industri kreatif tidak hanya 'awareness', tapi
                     sudah menjadi sebuah tren untuk berwirausaha.
                   </Card.Text>
@@ -106,7 +107,7 @@ const TentangKami = () => {
                   <p className="tokoh-position">
                     Gubernur Jawa Barat 2018-2023
                   </p>
-                  <Card.Text>
+                  <Card.Text className="card-ekraf-text">
                     Kota yang baik adalah kota yang memberi ruang bagi ekonomi
                     kreatif untuk tumbuh dan berkembang. Ekonomi kreatif adalah
                     cara untuk membuat kota lebih hidup dan berkelanjutan
@@ -116,6 +117,12 @@ const TentangKami = () => {
             </div>
           </Carousel.Item>
         </Carousel>
+      </section>
+
+      <section>
+        <div>
+          <RegulasiPage />
+        </div>
       </section>
 
       <section className="subsektor-container">

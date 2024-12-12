@@ -1,0 +1,124 @@
+/* Container untuk memastikan kartu tampil dengan baik dalam grid */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+h2.text-center {
+  text-align: center; /* Menyusun teks di tengah */
+  font-size: 2rem; /* Ukuran font yang lebih besar */
+  font-weight: bold; /* Menebalkan font */
+  color: #333; /* Warna teks yang lebih gelap */
+  padding-bottom: 20px; /* Memberikan jarak bawah */
+}
+/* Row untuk tata letak kartu */
+.row {
+  margin-top: 40px;
+}
+
+/* Styling untuk setiap kartu */
+.card {
+  border-radius: 12px;
+  overflow: hidden; /* Menghindari gambar keluar dari sudut-sudut kartu */
+  background-color: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan halus */
+  text-align: left; /* Semua konten di dalam kartu rata kiri */
+  margin: 10px;
+}
+
+/* Efek hover hanya pada gambar */
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.03); /* Zoom gambar saat kartu di-hover */
+}
+
+/* Styling untuk badge kategori */
+.badge {
+  margin: 10px 80px 0 12px;
+  font-size: 0.85rem;
+  padding: 8px 30px;
+  border-radius: 6px;
+  background-color: #005689 !important; /* Warna hijau untuk kategori */
+  color: white;
+  font-weight: 500;
+  display: inline-block;
+}
+
+/* Flex container untuk kategori dan tanggal */
+.card-header-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Styling untuk teks tanggal */
+.text-ekraf {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  margin-left: auto;
+  color: #263642;
+  text-align: right !important;
+}
+
+/* Styling untuk judul kartu */
+.card-title-kabar {
+  font-size: 1.15rem;
+  font-weight: bold;
+  margin-left: 12px;
+  color: #263642;
+  line-height: 1.3;
+}
+
+/* Styling untuk deskripsi kartu */
+.card-text-kabar {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px; /* Memberi jarak antar elemen */
+  line-height: 1.5;
+  text-align: left;
+  padding: 0 12px;
+}
+
+/* Styling untuk footer kartu */
+.card-footer {
+  background-color: #fff;
+  border-top: 1px solid #f1f1f1;
+  padding: 10px;
+  text-align: center; /* Read More di tengah */
+}
+
+/* Tombol "Read More" */
+.card-footer a {
+  display: inline-block;
+  color: #263642; /* Warna hijau untuk link */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.card-footer a:hover {
+  color: #005689; /* Warna hijau yang lebih gelap untuk efek hover */
+  text-decoration: none;
+}
+
+/* Responsif untuk perangkat kecil */
+@media (max-width: 767px) {
+  .col-md-4 {
+    max-width: 100%;
+  }
+
+  .card-img-top {
+    height: 150px; /* Menyesuaikan ukuran gambar */
+  }
+
+  .card-body {
+    padding: 15px; /* Padding lebih kecil untuk perangkat kecil */
+  }
+}

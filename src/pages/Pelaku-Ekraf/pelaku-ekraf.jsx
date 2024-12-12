@@ -25,7 +25,7 @@ const PelakuEkraf = () => {
           <Row>
             <Col md={4}>
               <EkrafCard
-                id={1}
+                collectionName="Kuliner"
                 icon={
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
@@ -45,7 +45,7 @@ const PelakuEkraf = () => {
 
             <Col md={4}>
               <EkrafCard
-                id={2}
+                collectionName="Fashion"
                 icon={
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <g fill="none" fillRule="evenodd">
@@ -64,7 +64,7 @@ const PelakuEkraf = () => {
 
             <Col md={4}>
               <EkrafCard
-                id={3}
+                collectionName="Kriya"
                 icon={
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <g fill="none" fillRule="evenodd">
@@ -82,7 +82,7 @@ const PelakuEkraf = () => {
             </Col>
             <Col md={4}>
               <EkrafCard
-                id={4}
+                collectionName="Seni Pertunjukan"
                 icon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -103,7 +103,7 @@ const PelakuEkraf = () => {
 
             <Col md={4}>
               <EkrafCard
-                id={5}
+                collectionName="Desain Komunikasi Visual"
                 icon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -124,7 +124,7 @@ const PelakuEkraf = () => {
 
             <Col md={4}>
               <EkrafCard
-                id={6}
+                collectionName="Film, Animasi, Videon"
                 icon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -145,7 +145,7 @@ const PelakuEkraf = () => {
 
             <Col md={4}>
               <EkrafCard
-                id={7}
+                collectionName="Fotografi"
                 icon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -172,7 +172,7 @@ const PelakuEkraf = () => {
 
             <Col md={4}>
               <EkrafCard
-                id={8}
+                collectionName="Musik"
                 icon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -195,7 +195,7 @@ const PelakuEkraf = () => {
 
             <Col md={4}>
               <EkrafCard
-                id={9}
+                collectionName="Seni Rupa"
                 icon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -216,7 +216,7 @@ const PelakuEkraf = () => {
 
             <Col md={4}>
               <EkrafCard
-                id={10}
+                collectionName="TV & Radio"
                 icon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -240,7 +240,7 @@ const PelakuEkraf = () => {
 
             <Col md={4}>
               <EkrafCard
-                id={11}
+                collectionName="Periklanan"
                 icon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -261,7 +261,7 @@ const PelakuEkraf = () => {
 
             <Col md={4}>
               <EkrafCard
-                id={12}
+                collectionName="Penerbitan"
                 icon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -282,7 +282,7 @@ const PelakuEkraf = () => {
 
             <Col md={4}>
               <EkrafCard
-                id={13}
+                collectionName="Games"
                 icon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -303,7 +303,7 @@ const PelakuEkraf = () => {
 
             <Col md={4}>
               <EkrafCard
-                id={14}
+                collectionName="Arsitektur"
                 icon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -324,7 +324,7 @@ const PelakuEkraf = () => {
 
             <Col md={4}>
               <EkrafCard
-                id={15}
+                collectionName="Desain Produk"
                 icon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -345,7 +345,7 @@ const PelakuEkraf = () => {
 
             <Col md={4}>
               <EkrafCard
-                id={16}
+                collectionName="Desain Interior"
                 icon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -384,7 +384,7 @@ const PelakuEkraf = () => {
 
             <Col md={4}>
               <EkrafCard
-                id={17}
+                collectionName="Aplikasi"
                 icon={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

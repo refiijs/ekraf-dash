@@ -1,4 +1,4 @@
-/* Navbar CSS */
+/* Modern Navbar CSS */
 .navbar {
   padding-block: 0 !important;
   position: sticky;
@@ -8,10 +8,7 @@
 }
 
 .navbar.bg-custom {
-  background-color: var(
-    --navbar-bg-color,
-    #ffffff
-  ); /* Custom background using CSS variable */
+  background-color: var(--navbar-bg-color, #ffffff);
 }
 
 .navbar-brand {
@@ -24,19 +21,36 @@
   color: #005689;
   font-weight: 600 !important; /* Menambah ketebalan font pada menu */
   margin-right: 30px; /* Menambah jarak antar menu */
+  position: relative;
+  transition: color 0.3s ease-in-out;
 }
 
 .nav-link:hover {
-  color: #005689 !important; /* Pastikan warna hover menjadi biru */
+  color: #003c57 !important; /* Warna hover lebih gelap */
   text-decoration: none;
 }
 
+/* Efek underline modern */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #005689;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+  width: 100%; /* Underline muncul dengan animasi */
+}
+
 .navbar-light .navbar-nav .nav-link.active {
-  color: #005689 !important;
+  color: #003c57 !important;
 }
 
 .navbar .container {
-  /* padding-block: 0px; */
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -46,4 +60,88 @@
 .navbar-brand img {
   width: 240px;
   height: 60px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+  align-items: center;
+}
+/* Responsive Navbar CSS */
+/* Small Devices (Max Width: 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .navbar-brand img {
+    width: fit-content; /* Ukuran lebih kecil untuk logo */
+    height: fit-content;
+  }
+
+  .nav-link {
+    font-size: 14px;
+    text-align: left;
+    margin: 5px 0; /* Tambahkan jarak antar item */
+  }
+
+  .nav {
+    width: 100%;
+  }
+
+  .navbar-collapse {
+    max-height: 300px;
+    overflow-y: auto;
+    transition: max-height 0.5s ease-in-out; /* Animasi untuk dropdown */
+  }
+
+  .navbar-toggler {
+    border: none; /* Hilangkan garis bingkai */
+    outline: none; /* Hilangkan outline default */
+    background: transparent; /* Transparan untuk background */
+    padding: 6px; /* Tambahkan sedikit ruang untuk klik */
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none; /* Hilangkan efek shadow fokus */
+  }
+
+  .navbar-toggler-icon {
+    width: 24px;
+    height: 24px;
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba(0,0,0,0.8)" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+/* Extra Small Devices (Max Width: 576px) */
+@media (max-width: 576px) {
+  .navbar-brand img {
+    width: 140px; /* Ukuran lebih kecil untuk logo */
+  }
+
+  .nav-link {
+    font-size: 12px;
+  }
+
+  .navbar {
+    padding: 8px;
+  }
+}
+
+/* Large Devices (Min Width: 992px) */
+@media (min-width: 992px) {
+  .navbar {
+    padding: 15px 30px;
+  }
+
+  .navbar-brand img {
+    width: 240px; /* Ukuran default untuk desktop */
+  }
+
+  .nav-link {
+    font-size: 16px;
+    margin: 0 15px; /* Jarak antar menu lebih besar */
+  }
 }

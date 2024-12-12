@@ -1,46 +1,61 @@
 .ekraf-card {
-  margin: 0 8px 50px 15px;
-  padding: 22px 22px 0px 22px;
+  margin: 0 8px 20px; /* Atur ulang jarak bawah agar tidak terlalu panjang */
+  padding: 22px;
   background-color: white;
   border: none !important;
-  box-shadow: 0 1px 8px rgba(240, 240, 240, 0.819);
+  box-shadow: 0 1px 2px rgba(240, 240, 240, 0.819);
   border-radius: 8px;
-  text-align: left;
+  text-align: left; /* Memastikan teks di dalam card rata kiri */
   cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Ikon di dalam card */
+.ekraf-card-icon svg,
+.ekraf-card-icon img {
+  width: 54px;
+  height: 54px;
+  margin-right: 10px;
+  color: #263642;
+  align-self: flex-start; /* Menjaga posisi ikon di kiri */
+}
+
+/* Judul card */
+.ekraf-card-title {
   text-decoration: none;
+  font-size: 24px;
+  margin-top: 12px;
+  padding: 16px 0;
+  color: #263642;
+  text-align: left; /* Rata kiri */
+  transition: color 0.3s ease;
 }
-.ekraf-card a {
-  text-decoration: none !important; /* Menghilangkan underline dari link */
+
+/* Deskripsi card */
+.ekraf-card-description {
+  font-size: 8px;
+  margin-top: 2px;
+  text-align: left; /* Rata kiri */
+  color: #263642;
+  transition: color 0.3s ease;
 }
+
+/* Hover efek pada card */
 .ekraf-card:hover {
   background-color: #005689 !important;
+  box-shadow: 0 4px 6px rgba(0, 86, 137, 0.3); /* Efek bayangan lebih kuat saat hover */
 }
 
-.ekraf-card svg {
-  width: 52px;
-  height: 52px;
-  margin-right: 10px;
-  vertical-align: middle;
-  color: #263642;
+/* Hover efek pada teks dan ikon */
+.ekraf-card:hover .ekraf-card-title,
+.ekraf-card:hover .ekraf-card-description {
+  color: white;
 }
 
-.ekraf-card .card-title {
-  text-decoration: none;
-  font-size: 22px;
-  margin-top: 12px;
-}
-
-.ekraf-card .card-text {
-  text-decoration: none;
-  font-size: 10px;
-  margin-top: 2px;
-}
-.ekraf-card:hover svg,
-.ekraf-card:hover .card-title,
-.ekraf-card:hover .card-text {
-  color: #fff !important;
+/* Hover efek pada ikon */
+.ekraf-card:hover .ekraf-card-icon svg {
+  color: white;
 }

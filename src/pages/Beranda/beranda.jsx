@@ -21,13 +21,15 @@ function Beranda() {
           <Row className="align-items-center">
             <Col md={6}>
               <h1>
-                <span class="word1">Masa depan kita ada pada</span>{" "}
-                <span class="word2">ekonomi imajinasi</span>{" "}
-                <span class="word1">ekonomi yang hadir karena</span>{" "}
-                <span class="word2">kreativitas</span>{" "}
+                <span class="word1"> Bangkitkan semangat</span>{" "}
+                <span class="word2">kreatifmu,</span>{" "}
+                <span class="word1">temukan potensi</span>{" "}
+                <span class="word2">tanpa batas,</span>{" "}
+                <span class="word1">dan wujudkan karya</span>{" "}
+                <span class="word2">luar biasa!</span>{" "}
               </h1>
 
-              <p className="author">Ridwan Kamil</p>
+              <p className="author">Karya Lokal, Prestasi Global</p>
               <Button
                 variant="primary"
                 className="tampil-button"
@@ -56,7 +58,7 @@ function Beranda() {
           <Row>
             <Col md={4}>
               <EkrafCard
-                id={1}
+                collectionName="Kuliner"
                 icon={
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
@@ -76,7 +78,7 @@ function Beranda() {
 
             <Col md={4}>
               <EkrafCard
-                id={2}
+                collectionName="Fashion"
                 icon={
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <g fill="none" fillRule="evenodd">
@@ -95,7 +97,7 @@ function Beranda() {
 
             <Col md={4}>
               <EkrafCard
-                id={3}
+                collectionName="Kriya"
                 icon={
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <g fill="none" fillRule="evenodd">
@@ -153,6 +155,14 @@ function Beranda() {
             </Carousel.Item>
           </Carousel>
         </Container>
+        <Button variant="primary" className="tampil-button">
+          <Link
+            to="/kabar-card/"
+            style={{ color: "inherit", textDecoration: "none" }}
+          >
+            Tampilkan Semua
+          </Link>
+        </Button>
       </section>
     </div>
   );

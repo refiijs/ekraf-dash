@@ -1,25 +1,28 @@
 /* beranda.css */
 
 .tentang-kami {
-  margin-top: 5rem;
+  margin-top: 1rem;
   margin-bottom: 5rem;
 }
 
 .mengenal-ekraf {
   display: flex;
   align-items: flex-start;
-  gap: 11rem;
+  gap: 10rem;
 }
 .mengenal-ekraf h2 {
   font-weight: bold;
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 2.8rem;
+  margin-bottom: 1.6rem;
+  margin-left: 10px;
 }
 
 .mengenal-ekraf p {
   font-size: 1.1rem;
   color: #555;
   line-height: 1.6;
+  text-align: justify;
+  padding-left: 14px;
 }
 
 .image-tentang-kami {
@@ -76,24 +79,37 @@
 
 .tokoh-container {
   display: flex;
-  justify-content: center;
+  justify-content: center !important;
   gap: 40px; /* Memberi jarak antar kartu */
   flex-wrap: wrap; /* Agar kartu bisa disusun secara responsif */
   padding-bottom: 80px;
 }
 
 .tokoh-card {
+  display: flex;
+  flex-direction: column; /* Pastikan konten diatur secara vertikal */
+  justify-content: center; /* Posisikan konten secara vertikal */
+  align-items: center; /* Posisikan konten secara horizontal */
   flex: 1;
   max-width: 400px;
-  border: none; /* Menghapus border bawaan */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan untuk kartu */
-  border-radius: 8px; /* Sudut membulat */
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
   background-color: #fff;
   transition: transform 0.3s ease, box-shadow 0.3s ease,
     background-color 0.3s ease;
-  text-align: center; /* Mengatur konten di tengah */
+  text-align: center; /* Mengatur teks di tengah */
   position: relative;
-  overflow: hidden; /* Agar konten yang membesar tidak keluar dari kartu */
+  overflow: hidden;
+  padding: 20px; /* Menambahkan padding untuk jarak antara elemen dan tepi kartu */
+}
+
+.tokoh-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px; /* Jarak antara gambar dan teks */
 }
 
 .tokoh-card:hover {
@@ -108,7 +124,7 @@
 }
 
 .tokoh-card:hover .tokoh-image {
-  transform: scale(1.1); /* Memperbesar gambar lebih besar saat hover */
+  transform: scale(1); /* Memperbesar gambar lebih besar saat hover */
 }
 
 .tokoh-card .card-body {
@@ -122,6 +138,7 @@
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 20px;
+  text-align: center;
   transition: transform 0.3s ease;
 }
 
@@ -134,17 +151,18 @@
 }
 
 .tokoh-card .card-title {
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 600;
   margin-bottom: 15px;
   transition: color 0.3s ease;
 }
 
-.tokoh-card .card-text {
+.tokoh-card .card-ekraf-text {
   font-size: 16px;
   color: #666;
   line-height: 1.6;
   transition: opacity 0.3s ease;
+  text-align: center;
 }
 
 .carousel-control-prev-icon,
@@ -174,6 +192,7 @@
 }
 
 .subsektor-title {
+  font-size: 32px;
   padding: 40px 0;
   font-weight: bold;
   margin-bottom: 30px;
@@ -220,8 +239,74 @@
   text-align: center;
 }
 
-@media (min-width: 768px) {
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .mengenal-ekraf {
+    gap: 2rem; /* Mengurangi gap antar elemen */
+    flex-direction: column; /* Susun elemen secara vertikal pada layar kecil */
+    align-items: center;
+  }
+
+  .mengenal-ekraf h2 {
+    font-size: 2rem; /* Ukuran font lebih kecil pada layar kecil */
+    text-align: center;
+  }
+
+  .mengenal-ekraf p {
+    font-size: 1rem; /* Ukuran font lebih kecil pada layar kecil */
+    padding-left: 0;
+  }
+
+  .image-tentang-kami {
+    width: 80%; /* Gambar lebih kecil pada layar kecil */
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .kata-tokoh h3 {
+    font-size: 24px;
+    padding: 40px 0;
+  }
+
+  .tokoh-container {
+    gap: 20px;
+  }
+
+  .tokoh-card {
+    max-width: 100%; /* Kartu tokoh akan memenuhi lebar kontainer pada layar kecil */
+  }
+
   .subsektor-icon-item {
-    width: 120px;
+    width: 100px; /* Lebar icon lebih kecil pada layar kecil */
+  }
+
+  .subsektor-title {
+    font-size: 28px; /* Ukuran font lebih kecil pada layar kecil */
+  }
+}
+
+/* Responsif untuk layar lebih kecil (misalnya ponsel kecil) */
+@media (max-width: 480px) {
+  .mengenal-ekraf h2 {
+    font-size: 1.8rem;
+  }
+
+  .mengenal-ekraf p {
+    font-size: 0.9rem;
+  }
+
+  .image-tentang-kami {
+    width: 100%; /* Gambar lebih kecil */
+    height: 200px;
+  }
+
+  .tokoh-card {
+    padding: 15px;
+    flex: 0 0 100%;
+  }
+
+  .subsektor-icon-item {
+    width: 80px;
   }
 }

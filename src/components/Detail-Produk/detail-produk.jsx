@@ -1,18 +1,45 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { db } from "../../config/firebaseconfig";
+import { doc, getDoc } from "firebase/firestore";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { FaPhone, FaInstagram } from "react-icons/fa"; // Import ikon dari react-icons
+import { FaPhone, FaInstagram } from "react-icons/fa";
 import "./detail-produk.css";
-import DataProduk from "./data-produk"; // Impor data produk
-import img from "../../Assets/img/img.png";
 
 const DetailProduk = () => {
-  const { id } = useParams();
-  const parsedId = Number(id);
-  const produk = DataProduk.find((item) => item.id === parsedId); // Temukan produk berdasarkan ID
+  const { collectionName, id } = useParams(); // Ambil ID dan collectionName dari URL
+  const navigate = useNavigate(); // Untuk navigasi kembali
+  const [produk, setProduk] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProduk = async () => {
+      setLoading(true);
+      try {
+        const docRef = doc(db, collectionName, id);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          setProduk(docSnap.data());
+        } else {
+          console.error("Produk tidak ditemukan");
+        }
+      } catch (error) {
+        console.error("Error mengambil produk:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProduk();
+  }, [id, collectionName]);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
 
   if (!produk) {
-    return <div>Produk tidak ditemukan.</div>; // Jika produk tidak ditemukan
+    return <p>Produk tidak ditemukan</p>;
   }
 
   return (
@@ -21,35 +48,52 @@ const DetailProduk = () => {
         <div className="col-md-6">
           {/* Bagian gambar */}
           <div className="image-card">
-            <img
-              src={img} // Ganti path dengan gambar produk
-              alt={produk.nama}
-              className="img-fluid rounded"
-            />
+            {produk.imageURL ? (
+              <img
+                src={produk.imageURL}
+                alt={produk.namaProduk}
+                className="img-fluid rounded"
+                onError={(e) => {
+                  // Fallback jika gambar gagal dimuat
+                  e.target.src = "/path/to/placeholder-image.jpg";
+                }}
+              />
+            ) : (
+              <div className="placeholder">No Image</div>
+            )}
           </div>
         </div>
         {/* Detail produk */}
         <div className="col-md-6">
-          <h2>{produk.nama}</h2>
-          <h5 className="text-muted">Range Harga: {produk.harga}</h5>
-          <p className="mt-3">{produk.deskripsi}</p>
-          <div className="contact-info">
+          <h2>{produk.namaProduk}</h2>
+          <h5 className="text-muted-produk">
+            Range Harga: {produk.rangeHarga}
+          </h5>
+          <p className="product-description">{produk.deskripsi}</p>
+          <div className="contact-produk">
             <h6>
               <strong>Kontak:</strong>
             </h6>
             <p>
-              <FaPhone /> {produk.kontak} {/* Ikon untuk kontak */}
+              <FaPhone />
+              <a
+                href={`https://wa.me/${produk.whatsapp}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="product-link"
+              >
+                {produk.whatsapp}
+              </a>
             </p>
             <p>
               <FaInstagram />{" "}
               <a
-                href={produk.instagram}
+                href={`https://instagram.com/${produk.instagram}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ textDecoration: "none", color: "inherit" }} // Gaya untuk tautan
+                className="product-link"
               >
-                {produk.instagram.split("/").pop()}{" "}
-                {/* Menampilkan username dari link Instagram */}
+                @{produk.instagram}
               </a>
             </p>
           </div>
@@ -61,13 +105,15 @@ const DetailProduk = () => {
         <div className="card">
           <div className="card-body p-0">
             <iframe
-              src={produk.mapSrc}
+              src={produk.alamatURL}
               width="100%"
-              height="300"
+              height="400"
               className="map-frame"
+              style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
-              title="Business Location"
+              title="Lokasi pada Peta"
+              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
         </div>
