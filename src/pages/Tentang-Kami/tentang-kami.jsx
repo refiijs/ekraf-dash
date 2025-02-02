@@ -43,34 +43,41 @@ const TentangKami = () => {
           nextIcon={<span className="carousel-control-next-icon" />}
         >
           <Carousel.Item>
-            <div className="tokoh-container">
-              <Card className="tokoh-card">
-                <Card.Body className="card-body">
+            <div className="tokoh-container-custom">
+              <Card className="tokoh-card-custom">
+                <Card.Body className="card-body-custom">
                   <img
                     src={img2} // Ganti dengan link atau path gambar
                     alt="Bima Arya"
-                    className="tokoh-image" // Menggunakan kelas CSS untuk styling
+                    className="tokoh-image-custom" // Menggunakan kelas CSS untuk styling
                   />
-                  <Card.Title>Bima Arya</Card.Title>
-                  <p className="tokoh-position">Wali Kota Bogor 2014-2024</p>
-                  <Card.Text className="card-ekraf-text">
+                  <Card.Title className="card-title-custom">
+                    Bima Arya
+                  </Card.Title>
+                  <p className="tokoh-position-custom">
+                    Wali Kota Bogor 2014-2024
+                  </p>
+                  <Card.Text className="card-ekraf-text-custom">
                     Kolaborasi adalah kunci keberhasilan ekonomi kreatif dalam
                     mendorong inovasi dan memperkuat pertumbuhan ekonomi kota.
                   </Card.Text>
                 </Card.Body>
               </Card>
-              <Card className="tokoh-card">
-                <Card.Body className="card-body">
+
+              <Card className="tokoh-card-custom">
+                <Card.Body className="card-body-custom">
                   <img
                     src={img3} // Ganti dengan link atau path gambar
                     alt="Sandiaga Uno"
-                    className="tokoh-image" // Menggunakan kelas CSS untuk styling
+                    className="tokoh-image-custom" // Menggunakan kelas CSS untuk styling
                   />
-                  <Card.Title>Sandiaga Uno</Card.Title>
-                  <p className="tokoh-position">
+                  <Card.Title className="card-title-custom">
+                    Sandiaga Uno
+                  </Card.Title>
+                  <p className="tokoh-position-custom">
                     Menteri Pariwisata dan Ekonomi Kreatif Indonesia 2020-2024
                   </p>
-                  <Card.Text className="card-ekraf-text">
+                  <Card.Text className="card-ekraf-text-custom">
                     Ekonomi kreatif adalah kunci kebangkitan ekonomi nasional.
                     Kita harus mendorong kolaborasi, inovasi, dan digitalisasi
                     di setiap sektor.
@@ -80,34 +87,38 @@ const TentangKami = () => {
             </div>
           </Carousel.Item>
           <Carousel.Item>
-            <div className="tokoh-container">
-              <Card className="tokoh-card">
-                <Card.Body className="card-body">
+            <div className="tokoh-container-custom">
+              <Card className="tokoh-card-custom">
+                <Card.Body className="card-body-custom">
                   <img
                     src={img5} // Ganti dengan link atau path gambar
                     alt="Yoris Sebastian"
-                    className="tokoh-image" // Menggunakan kelas CSS untuk styling
+                    className="tokoh-image-custom" // Menggunakan kelas CSS untuk styling
                   />
-                  <Card.Title>Yoris Sebastian</Card.Title>
-                  <p className="tokoh-position">Creativepreneur</p>
-                  <Card.Text className="card-ekraf-text">
+                  <Card.Title className="card-title-custom">
+                    Yoris Sebastian
+                  </Card.Title>
+                  <p className="tokoh-position-custom">Creativepreneur</p>
+                  <Card.Text className="card-ekraf-text-custom">
                     Saat ini industri kreatif tidak hanya 'awareness', tapi
                     sudah menjadi sebuah tren untuk berwirausaha.
                   </Card.Text>
                 </Card.Body>
               </Card>
-              <Card className="tokoh-card">
-                <Card.Body className="card-body">
+              <Card className="tokoh-card-custom">
+                <Card.Body className="card-body-custom">
                   <img
                     src={img4} // Ganti dengan link atau path gambar
                     alt="Ridwan Kamil"
-                    className="tokoh-image" // Menggunakan kelas CSS untuk styling
+                    className="tokoh-image-custom" // Menggunakan kelas CSS untuk styling
                   />
-                  <Card.Title>Ridwan Kamil</Card.Title>
-                  <p className="tokoh-position">
+                  <Card.Title className="card-title-custom">
+                    Ridwan Kamil
+                  </Card.Title>
+                  <p className="tokoh-position-custom">
                     Gubernur Jawa Barat 2018-2023
                   </p>
-                  <Card.Text className="card-ekraf-text">
+                  <Card.Text className="card-ekraf-text-custom">
                     Kota yang baik adalah kota yang memberi ruang bagi ekonomi
                     kreatif untuk tumbuh dan berkembang. Ekonomi kreatif adalah
                     cara untuk membuat kota lebih hidup dan berkelanjutan

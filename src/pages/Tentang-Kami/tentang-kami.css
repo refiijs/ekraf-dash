@@ -1,7 +1,7 @@
 /* beranda.css */
 
 .tentang-kami {
-  margin-top: 1rem;
+  margin-top: 4rem;
   margin-bottom: 5rem;
 }
 
@@ -58,6 +58,7 @@
   font-size: 50px;
   color: #999;
 }
+
 .kata-tokoh {
   width: 100vw;
   margin-top: 50px;
@@ -76,8 +77,8 @@
   font-weight: bold;
   margin-bottom: 30px;
 }
-
-.tokoh-container {
+/* Container Kelas */
+.tokoh-container-custom {
   display: flex;
   justify-content: center !important;
   gap: 40px; /* Memberi jarak antar kartu */
@@ -85,7 +86,8 @@
   padding-bottom: 80px;
 }
 
-.tokoh-card {
+/* Kartu Kelas */
+.tokoh-card-custom {
   display: flex;
   flex-direction: column; /* Pastikan konten diatur secara vertikal */
   justify-content: center; /* Posisikan konten secara vertikal */
@@ -104,45 +106,26 @@
   padding: 20px; /* Menambahkan padding untuk jarak antara elemen dan tepi kartu */
 }
 
-.tokoh-image {
+/* Gambar Kelas */
+.tokoh-image-custom {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 20px; /* Jarak antara gambar dan teks */
-}
-
-.tokoh-card:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Bayangan lebih besar saat hover */
-  background-color: #0970ac !important; /* Background berubah warna */
-}
-
-.tokoh-card:hover .tokoh-position,
-.tokoh-card:hover .card-title,
-.tokoh-card:hover .card-text {
-  color: #ffffff;
-}
-
-.tokoh-card:hover .tokoh-image {
-  transform: scale(1); /* Memperbesar gambar lebih besar saat hover */
-}
-
-.tokoh-card .card-body {
-  padding: 30px 30px;
-  transition: opacity 0.3s ease;
-}
-
-.tokoh-image {
-  width: 100px; /* Perbesar ukuran default gambar */
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 20px;
-  text-align: center;
   transition: transform 0.3s ease;
 }
 
-.tokoh-position {
+/* Kelas Judul */
+.card-title-custom {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+/* Kelas Posisi */
+.tokoh-position-custom {
   font-size: 12px;
   font-weight: 500;
   color: #555;
@@ -150,19 +133,37 @@
   transition: color 0.3s ease;
 }
 
-.tokoh-card .card-title {
-  font-size: 28px;
-  font-weight: 600;
-  margin-bottom: 15px;
-  transition: color 0.3s ease;
-}
-
-.tokoh-card .card-ekraf-text {
+/* Kelas Teks Ekraf */
+.card-ekraf-text-custom {
   font-size: 16px;
   color: #666;
   line-height: 1.6;
   transition: opacity 0.3s ease;
   text-align: center;
+}
+
+/* Hover Kelas untuk Kartu */
+.tokoh-card-custom:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Bayangan lebih besar saat hover */
+  background-color: #0970ac !important; /* Background berubah warna */
+}
+
+/* Hover Kelas untuk Teks */
+.tokoh-card-custom:hover .tokoh-position-custom,
+.tokoh-card-custom:hover .card-title-custom,
+.tokoh-card-custom:hover .card-ekraf-text-custom {
+  color: #ffffff;
+}
+
+/* Hover Kelas untuk Gambar */
+.tokoh-card-custom:hover .tokoh-image-custom {
+  transform: scale(1); /* Memperbesar gambar lebih besar saat hover */
+}
+
+/* Kelas Body Kartu */
+.card-body-custom {
+  padding: 30px 30px;
+  transition: opacity 0.3s ease;
 }
 
 .carousel-control-prev-icon,

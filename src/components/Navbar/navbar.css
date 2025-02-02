@@ -1,6 +1,6 @@
 /* Modern Navbar CSS */
 .navbar {
-  padding-block: 0 !important;
+  padding-block: 12px !important;
   position: sticky;
   top: 0;
   z-index: 99;
@@ -12,9 +12,15 @@
 }
 
 .navbar-brand {
-  font-size: 24px;
-  font-weight: 600 !important; /* Menambah ketebalan font */
-  max-width: 142px;
+  display: flex; /* Gunakan flexbox untuk mengatur elemen */
+  align-items: center; /* Ratakan secara vertikal */
+}
+
+.navbar-brand img {
+  max-height: 50px; /* Sesuaikan tinggi logo */
+  width: fit-content; /* Jaga proporsi lebar logo */
+  object-fit: contain; /* Hindari distorsi gambar */
+  margin-right: 8px; /* Tambahkan jarak opsional jika diperlukan */
 }
 
 .nav-link {
@@ -58,7 +64,7 @@
 }
 
 .navbar-brand img {
-  width: 240px;
+  width: 100px;
   height: 60px;
   transition: transform 0.3s ease-in-out;
 }

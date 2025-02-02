@@ -131,18 +131,18 @@ function Beranda() {
           <h2>Kabar Ekraf Bogor</h2>
           <Carousel interval={3000}>
             <Carousel.Item>
-              <img src={img2} alt="Hero Illustration" />
-              <Carousel.Caption>
-                <h3>KISRUHDOTCOM</h3>
-                <p>Musik Lokal Kota Bogor</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-
-            <Carousel.Item>
               <img src={img1} alt="Hero Illustration" />
               <Carousel.Caption>
                 <h3>Batik Day</h3>
                 <p>Hari Batik Nasional</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+
+            <Carousel.Item>
+              <img src={img2} alt="Hero Illustration" />
+              <Carousel.Caption>
+                <h3>KISRUHDOTCOM</h3>
+                <p>Musik Lokal Kota Bogor</p>
               </Carousel.Caption>
             </Carousel.Item>
 

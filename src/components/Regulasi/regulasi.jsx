@@ -7,9 +7,9 @@ const RegulasiPage = () => {
 
   const toggleCard = (index) => {
     if (openCardIndex === index) {
-      setOpenCardIndex(null); // Close the card if it's already open
+      setOpenCardIndex(null);
     } else {
-      setOpenCardIndex(index); // Open the clicked card
+      setOpenCardIndex(index);
     }
   };
 

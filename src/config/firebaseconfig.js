@@ -1,6 +1,7 @@
 // src/config/firebaseconfig.js
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, enableIndexedDbPersistence } from "firebase/firestore";
+import { getPerformance, trace } from "firebase/performance";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDqvj8-OdHj7Wyl4PqRn9NT8zpIQ29bbLk",
@@ -12,8 +13,27 @@ const firebaseConfig = {
   measurementId: "G-0YS00XH8PZ",
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const perf = getPerformance(app);
 
-export { app, db };
+// Aktifkan offline persistence (cache lokal)
+enableIndexedDbPersistence(db)
+  .then(() => {
+    console.log("Offline persistence enabled");
+  })
+  .catch((err) => {
+    if (err.code === "failed-precondition") {
+      console.error(
+        "Multiple tabs open, persistence can only be enabled in one tab at a time."
+      );
+    } else if (err.code === "unimplemented") {
+      console.error(
+        "The current browser does not support offline persistence."
+      );
+    } else {
+      console.error("Persistence failed:", err);
+    }
+  });
+
+export { app, db, perf, trace };

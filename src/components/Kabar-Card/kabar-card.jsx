@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../config/firebaseconfig"; // Path ke konfigurasi Firebase Anda
+import { db, perf, trace } from "../../config/firebaseconfig"; // Impor trace dari konfigurasi Firebase
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./kabar-card.css";
 
@@ -8,8 +8,11 @@ const KabarCard = () => {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Fetch data dari Firestore
   useEffect(() => {
+    // Buat trace untuk pengambilan data
+    const fetchDataTrace = trace(perf, "fetchNewsData");
+    fetchDataTrace.start(); // Mulai pengukuran performa
+
     const fetchData = async () => {
       try {
         const querySnapshot = await getDocs(collection(db, "news"));
@@ -18,9 +21,12 @@ const KabarCard = () => {
           ...doc.data(),
         }));
         setNews(data);
+        fetchDataTrace.putMetric("documentCount", data.length); // Tambahkan metrik jumlah dokumen
+        fetchDataTrace.stop(); // Akhiri pengukuran
         setLoading(false);
       } catch (error) {
         console.error("Error fetching data: ", error);
+        fetchDataTrace.stop(); // Akhiri meskipun terjadi kesalahan
         setLoading(false);
       }
     };
@@ -29,13 +35,22 @@ const KabarCard = () => {
   }, []);
 
   if (loading) {
-    return <div className="text-center mt-5">Loading...</div>;
+    return (
+      <div className="text-center mt-5">
+        <div className="geometric-loader">
+          <div className="circle"></div>
+          <div className="circle"></div>
+          <div className="circle"></div>
+        </div>
+        <p className="loading-text">Loading Kabar Ekraf...</p>
+      </div>
+    );
   }
 
   return (
     <div className="container mt-4">
       <h1 className="text-center mt-4">Kabar Ekraf Bogor</h1>
-      <p>
+      <p className="centered-text">
         Berita dan peluang terkini untuk mendukung inovasi dan kolaborasi pelaku
         kreatif di Kota Bogor✨{" "}
       </p>

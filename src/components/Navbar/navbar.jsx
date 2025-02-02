@@ -4,6 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import "./navbar.css";
 import logo from "../../Assets/img/logo-disparbud.png";
+import logo1 from "../../Assets/img/logo.png";
 
 function NavbarTop() {
   return (

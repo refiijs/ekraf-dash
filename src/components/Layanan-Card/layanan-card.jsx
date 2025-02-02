@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../config/firebaseconfig.js";
+import { db, perf, trace } from "../../config/firebaseconfig.js"; // Import trace
 import { FaCalendarAlt, FaClock, FaUserTie } from "react-icons/fa";
 import "./layanan-card.css";
 
@@ -10,6 +10,9 @@ const CardList = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      const fetchTrace = trace(perf, "fetch_layanan_data"); // Create a trace for fetching data
+      fetchTrace.start(); // Start the trace
+
       try {
         const querySnapshot = await getDocs(collection(db, "layanan"));
         const data = querySnapshot.docs.map((doc) => ({
@@ -21,6 +24,8 @@ const CardList = () => {
       } catch (error) {
         console.error("Error fetching data: ", error);
         setLoading(false);
+      } finally {
+        fetchTrace.stop(); // Stop the trace after data is fetched
       }
     };
 
@@ -28,7 +33,16 @@ const CardList = () => {
   }, []);
 
   if (loading) {
-    return <div className="text-center mt-5">Loading...</div>;
+    return (
+      <div className="text-center mt-5">
+        <div className="geometric-loader">
+          <div className="circle"></div>
+          <div className="circle"></div>
+          <div className="circle"></div>
+        </div>
+        <p className="loading-text">Loading Layanan Ekraf...</p>
+      </div>
+    );
   }
 
   return (
